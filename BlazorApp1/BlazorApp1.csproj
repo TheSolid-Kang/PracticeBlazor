@@ -4,6 +4,26 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp-Engine\Engine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\net6.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>..\packages\6.0.13\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\packages\6.0.13\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet">
+      <HintPath>..\packages\net6.0\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>

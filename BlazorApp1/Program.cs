@@ -1,6 +1,7 @@
 using BlazorApp1.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using System.Threading;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,3 +30,20 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+
+/*
+Mutex mutex;
+//프로세스 런 가드
+//https://afsdzvcx123.tistory.com/entry/WPF-WPF-%EC%A4%91%EB%B3%B5-%EC%8B%A4%ED%96%89-%EB%B0%A9%EC%A7%80-%ED%95%98%EB%8A%94%EB%B2%95
+
+string mutexName = "program";
+bool createNew = false;
+
+mutex = new Mutex(true, mutexName, out createNew);
+
+if (false == createNew)
+{
+  System.Windows.Forms.MessageBox.Show("이미 실행중입니다.");
+  //Shutdown();
+}
+*/
