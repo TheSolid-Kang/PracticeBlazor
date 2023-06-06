@@ -8,13 +8,39 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
-<button @onclick="CallText">razor에서 @@code에 작성된 함수 불러오기</button>
-@code{
+<div>
+    <h2></h2>
+    <button @onclick="CallText">razor에서 @@code에 작성된 함수 불러오기</button>
+</div>
+<div>
+    <h2>2-3강 div, h1, p 랑 span 태그 만들기, 이미지 웹 루트에서 불러오기, inpufile 만들기</h2>
+    <div>
+        <h3> div, h1, p 등 태그 써보기</h3>
+        <h3>태그 써보기 </h3>
+        <div>div 태그</div>
+        <p>p 태그</p>
+        <span>span 태그</span>
+    </div>
+    <div>
+        <h3>웹 루트에서 이미지 불러오기</h3>
+        <img src="img/sql server 네트워크 사용.png" alt="이미지 설명" />
+    </div>
+
+    <div>
+        <h3>InputFile 태그 </h3>
+        <InputFile OnChange="GetInputfileTag">GetInputfileTag</InputFile>
+    </div>
+
+</div>
+
+
+
+@code {
     //230606 c# 코드를 작성하는 부분임.
     private List<string> Texts;
     private void initialize()
     {
-        if(null != Texts)
+        if (null != Texts)
         {
             Texts.Clear();
             Texts = null;
@@ -28,6 +54,21 @@ Welcome to your new app.
     public void CallText()
     {
         initialize();
-        System.Console.WriteLine(string.Join("\n",Texts));
+        System.Console.WriteLine(string.Join("\n", Texts));
+    }
+
+
+    public void GetInputfileTag(InputFileChangeEventArgs _e)
+    {
+        List<string> texts = new List<string>();
+
+        texts.Add("InputFile 태그는 파일 업로드다.");
+        texts.Add("");
+        texts.Add("");
+        texts.Add("이 함수에서 출력하는 값은 이벤트로 받아온 파일 안에");
+        texts.Add("이름을 가져온다.");
+        texts.Add("");
+        System.Console.WriteLine(string.Join("\n", texts));
+        System.Console.Write(_e.File.Name);
     }
 }
