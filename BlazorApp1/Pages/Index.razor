@@ -1,4 +1,5 @@
-﻿@page "/"
+﻿@* @Page 이 부분에서 라우팅으로 주소를 정할 수 있다.*@
+@page "/"
 
 <PageTitle>Index</PageTitle>
 
@@ -7,3 +8,26 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+<button @onclick="CallText">razor에서 @@code에 작성된 함수 불러오기</button>
+@code{
+    //230606 c# 코드를 작성하는 부분임.
+    private List<string> Texts;
+    private void initialize()
+    {
+        if(null != Texts)
+        {
+            Texts.Clear();
+            Texts = null;
+        }
+        Texts = new List<string>(16);
+        Texts.Add("블레이저 강의 보는 중");
+        Texts.Add("index.razor와 index.cshtml은 같이 있으면 안 된다.");
+        Texts.Add("지금 해봤는데 에러났음.");
+        Texts.Add("그래서 하나 삭제함.");
+    }
+    public void CallText()
+    {
+        initialize();
+        System.Console.WriteLine(string.Join("\n",Texts));
+    }
+}

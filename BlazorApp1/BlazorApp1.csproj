@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="web.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="web.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="web.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CSharp-Engine\Engine.csproj" />
   </ItemGroup>
 
