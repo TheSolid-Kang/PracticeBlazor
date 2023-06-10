@@ -1,5 +1,8 @@
 ﻿@* @Page 이 부분에서 라우팅으로 주소를 정할 수 있다.*@
 @page "/"
+@{
+    bool isContentVisible = true; // 초기에 내용이 펼쳐져 있도록 설정
+}
 
 <PageTitle>Index</PageTitle>
 
@@ -8,10 +11,13 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+
 <div>
     <h2> 2-1. cs 파일안에서 네임 스페이스 변수 메소드 만들기, cshtml 페이지 생성, 레이저 페이지 하나 생성</h2>
     <button @onclick="CallText">razor에서 @@code에 작성된 함수 불러오기</button>
 </div>
+
 <div>
     <h2>2-3강 div, h1, p 랑 span 태그 만들기, 이미지 웹 루트에서 불러오기, inpufile 만들기</h2>
     <div>
@@ -33,6 +39,15 @@ Welcome to your new app.
 
 </div>
 
+<div>
+    <h2>2-4. site.css에 코드 추가해 적용, razor.css 만들어서 적용시켜 보기, 딥 css를 삭제해서 변화 살펴보기</h2>
+    <!--size.css 적용-->
+    <p id="Test_cation">Test_cation</p>
+    <p id="Test_sample">Test_sample</p>
+    <div class="Red_Box">size.css 적용</div>
+    <!--격리css(Index.razor.css)적용 -->
+    <div class="Blue_Box">Index.razor.css 적용</div>
+</div>
 
 
 @code {
@@ -71,4 +86,6 @@ Welcome to your new app.
         System.Console.WriteLine(string.Join("\n", texts));
         System.Console.Write(_e.File.Name);
     }
+
+
 }
