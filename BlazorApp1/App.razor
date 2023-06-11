@@ -6,7 +6,8 @@
     <NotFound>
         <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+          @*페이지 찾을 수 없는 경우 에러 메시지 출력하는 부분*@
+            <p role="alert">사용자정의: 해당 페이지를 찾을 수 없습니다.</p>
         </LayoutView>
     </NotFound>
 </Router>
