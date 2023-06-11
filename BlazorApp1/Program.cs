@@ -11,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+//2번 방법: inject //의존성 주입
+builder.Services.AddScoped<TestClass2>();
 
 var app = builder.Build();
 
