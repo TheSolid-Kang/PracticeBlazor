@@ -4,14 +4,21 @@
     bool isContentVisible = true; // 초기에 내용이 펼쳐져 있도록 설정
 }
 
-<PageTitle>Index</PageTitle>
+@*페이지의 타이틀 넣는 곳*@
+<PageTitle>Index 페이지</PageTitle>
 
+@*html 코드 작성하는 부분*@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
+
+<datalist id="data_list">
+  <option value="2-1">
+  </option>
+</datalist>
 
 <div>
     <h2> 2-1. cs 파일안에서 네임 스페이스 변수 메소드 만들기, cshtml 페이지 생성, 레이저 페이지 하나 생성</h2>
@@ -48,7 +55,6 @@ Welcome to your new app.
     <!--격리css(Index.razor.css)적용 -->
     <div class="Blue_Box">Index.razor.css 적용</div>
 </div>
-
 
 @code {
     //230606 c# 코드를 작성하는 부분임.
