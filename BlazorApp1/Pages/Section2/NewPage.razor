@@ -1,0 +1,30 @@
+﻿@page "/NewPage"
+@*2-7-2. 네브 메뉴에 링크 하나 더 추가하기*@
+@*2-8. 인덱스 레이저 페이지에 5가지 변수와 void 함수 추가, 기본값 지웠을때 에러 확인, 리스트에 클래스를 만들어 보기, 람다식과 형식 지정 리턴 함수 만들기*@
+
+<h3>NewPage</h3>
+
+@*람다식 사용*@
+<button @onclick="@(() => { Console.WriteLine("빈 텍스트 출력");})">버튼 누르고 콘솔 확인//람다식 씀.</button>
+
+@code {
+    public class TableName
+    {
+        public int Order{ get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Price { get; set; } = string.Empty;
+    }
+
+    //레이저에서 사용하는 자료형 5가지
+    private int Number { get; set; } = 1234;
+    private long BigNum { get; set; } = 123456678;
+    private string MyText { get; set; } = "블레이저의 C#은 문법이 까다롭습니다.";
+    private string[] Texts = new string[10]; //자주 사용하진 않지만 라이브러리 연결에만 가끔 사용한다.
+    private List<string> Texts2 = new List<string>();
+    private List<TableName> TableNames = new();
+
+    private void SimpleMethod()
+    {
+        Console.WriteLine("단순한 문자열 넣기");
+    }
+}

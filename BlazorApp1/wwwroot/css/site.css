@@ -62,3 +62,20 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#Test_cation {
+    font-size: 24px;
+    color: blue
+}
+#Test_sample{
+    font-size:40px;
+    color:red
+
+}
+
+.Red_Box{
+    width:100px;
+    height:100px;
+    background-color: beige;
+    border-radius:5px
+}

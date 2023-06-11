@@ -1,4 +1,12 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@*2-7. 블레이저에서 부트스트랩을 문제 없이 삭제하기
+  1. 아래의 html 코드 싹 다 삭제
+
+  2. @code{} 안에 작성 된 것 싹 다 삭제함.
+  
+  3. NaveMenu.razor.css 파일에 작성된 코드를 전부 삭제함.
+*@
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">BlazorApp1</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -22,6 +30,22 @@
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="fetchdata">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+        @*2-7-2. 네브 메뉴에 링크 하나 더 추가하기*@
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="NewPage">
+                <span class="oi oi-plus" aria-hidden="true"></span> NewPage
+            </NavLink>
+        </div>        
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="OverrideMethods">
+                <span class="oi oi-plus" aria-hidden="true"></span> override 메서드 출력
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="CSharpClassUsingPage">
+                <span class="oi oi-plus" aria-hidden="true"></span> 외부 C#파일 클래스 사용 방법
             </NavLink>
         </div>
     </nav>

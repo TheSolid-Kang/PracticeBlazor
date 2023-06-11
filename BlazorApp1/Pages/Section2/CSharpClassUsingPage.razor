@@ -1,0 +1,23 @@
+﻿@page "/CSharpClassUsingPage"
+
+@*1번 방법: using 사용*@
+@using BlazorApp1.Data
+
+@*2번 방법: using네임스페이스 + inject 사용//의존성 주입*@
+@*@using BlazorApp1.Data*@
+@inject TestClass2 TestClass2Variable  //변수 바로 만듦.
+
+<h3>CSharpClassUsingPage: 2-10. csharp 폴더 안에 파일을 만들고 변수와 함수를 생성, 레이저 페이지에 클래스 형과 인젝트 형으로 가져오기</h3>
+<p>2번-inject로 만든 클래스: @TestClass2Variable</p>
+
+@code {
+    public TestClass1 testClass1 { get; set; } = new TestClass1();
+    protected override void OnInitialized()
+    {
+        System.Console.WriteLine("1번-using으로 만든 클래스: " + testClass1.ClassName);
+        System.Console.WriteLine("2번-using네임스페이스 + inject로 만든 클래스: " + TestClass2Variable.ClassName);
+
+        base.OnInitialized();
+    }
+
+}

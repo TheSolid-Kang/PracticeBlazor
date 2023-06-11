@@ -1,0 +1,9 @@
+﻿@page "/third/{parameter}"
+
+<h3>ThirdPage 입니다.</h3>
+<p>@Parameter</p>
+
+@code {
+    [Parameter]
+    public string Parameter { get; set; } = "parameter 변수는 page에 값 전달하는 겁니다.";
+}
