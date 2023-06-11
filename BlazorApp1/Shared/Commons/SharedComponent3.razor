@@ -1,0 +1,10 @@
+﻿<div class="rounded border-1 bg-red py-3 px-2">
+    <h3 class="text-dark text-black text-lg-start px-2" >SharedComponent3</h3>
+  <p class="text-muted text-sm-start">제대로 실행 되는지 확인</p>
+  <p>Index.razor 페이지에서 파라미터 전달 받은 문자열: @GetText</p>
+  
+</div>
+@code {
+    [Parameter]
+    public string GetText { get; set; } = string.Empty;
+}

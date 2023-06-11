@@ -56,6 +56,25 @@ Welcome to your new app.
     <div class="Blue_Box">Index.razor.css 적용</div>
 </div>
 
+<div>
+    <h2>2-6. Shared 폴더안에 razor 페이지를 만들기, 다른 폴더에서 만들어보기, 인덱스 페이지에서 새로만든 컴포넌트 데이터 전달</h2>
+    
+    @*공유페이지 호출*@
+    <SharedComponent></SharedComponent>
+
+    @*_Import.razor에 폴더 추가하지 않고, razor 페이지 호출하는 경우*@
+    <BlazorApp1.Shared.Commons.SharedComponent2></BlazorApp1.Shared.Commons.SharedComponent2>
+
+    @*_Import.razor에 폴더 추가한 후, razor 페이지 호출하는 경우
+        @using BlazorApp1.Shared.Commons
+        이거 한 줄 넣음.
+    *@
+    <SharedComponent2></SharedComponent2>
+
+    @*파라미터 전달*@
+    <SharedComponent3 GetText="부모 페이지에서 파라미터 전달된 문자열"></SharedComponent3>
+</div>
+
 @code {
     //230606 c# 코드를 작성하는 부분임.
     private List<string> Texts;
