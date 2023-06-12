@@ -1,0 +1,17 @@
+﻿
+
+<h3>RoundAlert</h3>
+<div class="card" style="width: 18rem;">
+    <img src="img/sql server 네트워크 사용.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@CartTitle</h5>
+        <p class="card-text">추가하는 @(CardContent) 값</p>@*변수명과 HTML 안의 내용을 겹치게 하고 싶다면 이같이 괄호로 변수명의 범위를 지정해 주면 된다.*@
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string CartTitle { get; set; } = string.Empty;
+    [Parameter]
+    public string CardContent { get; set; } = string.Empty;
+}
