@@ -20,8 +20,14 @@
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
+    @*RenderBody: Pages 안의 페이지 몸통을 불러오는 역할
+        Shared 폴더 안의 MainLayout.razor 파일을 불러옴.
+    *@
     @RenderBody()
-    @*에러 발생 시 출력되는 팝업창이므로 어지간해선 지우지 않는다.*@
+
+    @*blazor-error-ui: 에러 발생 시 출력되는 팝업창이므로 어지간해선 지우지 않는다.
+    error 발생 시 어떻게 처리할지 정함.
+    *@
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
             An error has occurred. This application may no longer respond until reloaded.
@@ -33,6 +39,7 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    @*C# 코드를 자바스크립트로 변환하는 기능*@
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
