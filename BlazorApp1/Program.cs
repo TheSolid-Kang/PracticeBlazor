@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System.Threading;
 
-//var dao = new Engine._01.DAO.MSSQL_DAO();
+var dao = new Engine._01.DAO.MSSQL_DAO();
 
 var builder = WebApplication.CreateBuilder(args);
 
