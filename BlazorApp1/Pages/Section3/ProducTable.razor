@@ -1,0 +1,42 @@
+﻿@page "/ProducTable"
+@using BlazorApp1.Data.NewFolder
+@inject TableCall tableCall;
+<h3 id="PageTitle">ProducTable</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">이름</th>
+      <th scope="col">제품형태</th>
+      <th scope="col">제품카테고리</th>
+      <th scope="col">제품가격</th>
+      <th scope="col">제품가격</th>
+      <th scope="col">구입일자</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var configTable in ConfigTables)
+        {
+            <tr>
+                <td>@configTable.Id</td>
+                <td>@configTable.Name</td>
+                <td>@configTable.Product</td>
+                <td>@configTable.Category</td>
+                <td>@configTable.Price</td>
+                <td>@configTable.WhenBuy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<RoundAlert CartTitle="CardTitle: 첫번째 페이지에서 호출한 카드" CardContent="CardContent: 첫번째 페이지에서 원한는 내용을 집어넣을 수 있다."></RoundAlert>
+
+@code {
+    [Parameter]
+    public List<ConfigTable> ConfigTables { get; set; } = new List<ConfigTable>();
+    protected override void OnInitialized()
+    {
+        System.Console.Write("확인");
+        ConfigTables = tableCall.GetConfigTables();
+        base.OnInitialized();
+    }
+}

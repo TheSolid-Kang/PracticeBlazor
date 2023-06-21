@@ -1,9 +1,10 @@
 using BlazorApp1.Data;
+using BlazorApp1.Data.NewFolder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System.Threading;
 
-//var dao = new Engine._01.DAO.MSSQL_DAO();
+var dao = new Engine._01.DAO.MSSQL_DAO();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 //2번 방법: inject //의존성 주입
 builder.Services.AddScoped<TestClass2>();
+builder.Services.AddScoped<ConfigTable>();
+builder.Services.AddScoped<TableCall>();
 
 var app = builder.Build();
 
@@ -31,7 +34,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.MapFallbackToPage("/_Host"); //해당 _Host 라는 페이지를 불러온다.
 
 app.Run();
 

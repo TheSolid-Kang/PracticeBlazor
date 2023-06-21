@@ -1,0 +1,31 @@
+﻿@page "/FormInput"
+<h3 id="PageTitle">FormInput</h3>
+
+<div>
+    <input @bind="Title" type="text" placeholder="제목을 입력해 주세요." />
+    <textarea @bind="Content" placeholder="내용을 입력해주세요."></textarea>
+    <button @onclick="ChangeAttr">적용하기</button>
+</div>
+
+<div>
+    <h3 id="FormTitle"></h3>
+    <p id="Contemt"></p>
+</div>
+
+<RoundAlert CartTitle="CardTitle: 첫번째 페이지에서 호출한 카드" CardContent="CardContent: 첫번째 페이지에서 원한는 내용을 집어넣을 수 있다."></RoundAlert>
+
+@code {
+    private string Title { get; set; } = string.Empty;
+    private string Content { get; set; } = string.Empty;
+
+    private string ShowTitle { get; set; } = string.Empty;
+    private string ShowContent { get; set; } = string.Empty;
+
+    void ChangeAttr()
+    {
+        ShowTitle = Title;
+        ShowContent = Content;
+    }
+
+
+}
