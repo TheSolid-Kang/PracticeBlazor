@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System.Threading;
 
-//var dao = new Engine._01.DAO.MSSQL_DAO();
+var dao = new Engine._01.DAO.MSSQL_DAO();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +34,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.MapFallbackToPage("/_Host"); //해당 _Host 라는 페이지를 불러온다.
 
 app.Run();
 
